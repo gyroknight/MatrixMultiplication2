@@ -30,10 +30,10 @@ __kernel void MatrixMultiplicationTwo(__global float *matrix1,
 
 	}
 
-	output[idy * widthA + idx] = sum;
+	temp2[idy * widthA + idx] = sum;
 
-	// Transpose matrix
-	// uint targetIndex = idy * widthB + idx;
-	// uint sourceIndex = idx * widthB + idy;
-	// output[targetIndex] = temp2[sourceIndex];
+	// Transpose matrix  
+	uint targetIndex = idx * widthB + idy;
+	uint sourceIndex = idy * widthB + idx;
+	output[targetIndex] = temp2[sourceIndex];
 }
