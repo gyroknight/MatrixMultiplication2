@@ -1,3 +1,6 @@
 # Vim undos
 
 **/*.un~
+
+# Temp files
+*~
